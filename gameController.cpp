@@ -4,32 +4,23 @@
 
 #include "gameController.h"
 
-gameController::gameController(gameModel& model):model(model)
+gameController::gameController(gameModel &model, gameView &view): model(model), view(view)
 {
 }
 
 void gameController::launch()
 {
-    update();
-    std::string input;
+    this->view.update();
+    char input;
+    //system("stty raw");
     do
     {
-        input=getchar();
-        if(input=="\n")
+        input=getchar_unlocked();
+        if(input=='\n')
         {
             this->model.increasePoints(1);
-            this->update();
+            this->view.update();
         }
     }
-    while(input=="\n");
-
-}
-
-
-void gameController::update()
-{
-    system("clear");
-    std::cout<<"Kliker konsolowy wersja wczesna alpha niewazne naprawde idz sobie stad czlowieku"<<std::endl;
-    std::cout<<"Points: "<<this->model.getPoints()<<"\n";
-
+    while(input=='\n');
 }

@@ -6,7 +6,8 @@
 #define EXAMPLEMVC_GAMEMODEL_H
 
 
-class gameModel {
+class gameModel
+{
     public:
         gameModel();
         void increasePoints(int);

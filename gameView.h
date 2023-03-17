@@ -5,11 +5,17 @@
 #ifndef EXAMPLEMVC_GAMEVIEW_H
 #define EXAMPLEMVC_GAMEVIEW_H
 
+#include <iostream>
+#include <stdlib.h>
+#include "gameModel.h"
 
-class gameView {
-public:
-
-
+class gameView
+{
+    public:
+        explicit gameView(gameModel&);
+        void update();
+    private:
+        gameModel& model;
 };
 
 

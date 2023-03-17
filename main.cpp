@@ -6,7 +6,8 @@ using namespace std;
 int main()
 {
     gameModel model;
-    gameController controller(model);
+    gameView view(model);
+    gameController controller(model, view);
     controller.launch();
     return 0;
 }

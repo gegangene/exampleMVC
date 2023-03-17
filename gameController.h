@@ -5,18 +5,19 @@
 #ifndef EXAMPLEMVC_GAMECONTROLLER_H
 #define EXAMPLEMVC_GAMECONTROLLER_H
 
-#include <iostream>
-#include <cstdio>
+//#include <stdlib.h>
 #include "gameModel.h"
+#include "gameView.h"
 
-class gameController {
+class gameController
+{
     public:
-        explicit gameController(gameModel&);
-        void launch();
-        void update();
+    gameController(gameModel&, gameView&);
+    void launch();
 
     private:
         gameModel& model;
+        gameView& view;
 
 };
 
