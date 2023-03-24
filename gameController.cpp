@@ -18,9 +18,12 @@ void gameController::launch()
         input=getchar();
         if(input==' ')
         {
-            this->model.increasePoints(1);
-            if(this->model.getPoints()%100==0)
+            this->model.increasePoints(1*model.getLvl());
+            if(this->model.getPoints()/model.getLvl()%100==0)
+            {
+                model.increaseLvl();
                 this->view.papaj();
+            }
             else
                 this->view.update();
         }

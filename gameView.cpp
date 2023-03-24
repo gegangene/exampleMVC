@@ -20,6 +20,7 @@ void gameView::update()
     system("/bin/stty -raw");
     std::cout<<"Kliker konsolowy wersja wczesna alpha\n\taby zdobywac punkty, wciskaj spacje.\n\taby zakonczyc, wcisnij ESC"<<"\n";
     pointsShow();
+    std::cout<<"Current level: "<<model.getLvl();
     system("/bin/stty raw");
 }
 
@@ -169,5 +170,5 @@ void gameView::ending()
 {
     system("/bin/stty -raw");
     wystrzal();
-    std::cout<<std::endl<<papajRandTxt(20)<<"\n\nZdobyles: "<<model.getPoints()<<" punktow."<<"\n\nPS: przegrales w gre";
+    std::cout<<std::endl<<papajRandTxt(20)<<"\n\nZdobyles: "<<model.getPoints()<<" punktow."<<"\n\n\n\n\nPS: przegrales w gre";
 }
