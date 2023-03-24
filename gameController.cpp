@@ -11,18 +11,19 @@ gameController::gameController(gameModel &model, gameView &view): model(model), 
 void gameController::launch()
 {
     this->view.update();
-    char input;
+    int input;
     system("/bin/stty raw");
     do
     {
         input=getchar();
-        if(input==' ')
+        if(input==32)
         {
             this->model.increasePoints(1*model.getLvl());
-            if(this->model.getPoints()/model.getLvl()%100==0)
+            if(this->model.remainingClicks()==0)
             {
+                model.resetClicks();
                 model.increaseLvl();
-                this->view.papaj();
+                this->view.nextLvl();
             }
             else
                 this->view.update();

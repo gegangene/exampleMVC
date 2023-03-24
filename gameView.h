@@ -15,11 +15,12 @@ class gameView
     public:
         explicit gameView(gameModel&);
         void update();
-        void papaj();
+        void nextLvl();
         void ending();
     private:
         gameModel& model;
         void pointsShow();
+        std::string progressBar();
 };
 
 

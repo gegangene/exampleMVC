@@ -11,22 +11,40 @@ gameView::gameView(gameModel& model):model(model)
 
 void gameView::pointsShow()
 {
-    std::cout<<"Points: "<<"\n"<<model.getPoints()<<"\n";
+    std::cout<<"Zdobyte punkty: "<<model.getPoints()<<"\n";
 }
+
+std::string gameView::progressBar()
+{
+    std::string axa="|";
+    int a=model.remainingClicks()/model.getLvl()/5;
+    for(int i=a; i<20; i++)
+    {
+        axa+="~";
+    }
+
+    for(int i=a; i>=0; i--)
+    {
+        axa+=" ";
+    }
+    return axa+="|";
+}
+
 
 void gameView::update()
 {
     system("clear");
     system("/bin/stty -raw");
     std::cout<<"Kliker konsolowy wersja wczesna alpha\n\taby zdobywac punkty, wciskaj spacje.\n\taby zakonczyc, wcisnij ESC"<<"\n";
+    std::cout<<"\n\nObecny poziom: "<<model.getLvl();
+    std::cout<<"\nDo kolejnego poziomu zostalo: "<<model.remainingClicks()<<" klikniec.\n"<<progressBar()<<"\n\n";
     pointsShow();
-    std::cout<<"Current level: "<<model.getLvl();
     system("/bin/stty raw");
 }
 
 int randNr(int a)
 {
-    srand(time(NULL));
+    srand(time(nullptr));
     return std::rand()%a;
 }
 
@@ -63,7 +81,7 @@ std::string papajRandTxt(int a=randNr(11))
     }
 }
 
-void gameView::papaj()
+void gameView::nextLvl()
 {
     system("clear");
     system("/bin/stty -raw");
@@ -85,19 +103,17 @@ void gameView::papaj()
     std::cout<<" 0.....................................0\n";
     std::cout<<" 0...............\\....../..............0\n";
     std::cout<<" 0.................\\___/...............0\n";
-    std::cout<<" 0.....................................0\n";
+    std::cout<<" 0.....................................0\n\n";
     pointsShow();
     system("/bin/stty raw");
 }
 
-void waitAndCls(bool dlugo)
+void waitAndCls(bool forLong)
 {
-    if(dlugo)
-        for(int i=INT_MIN; i<0; i++)
-        {}
+    if(forLong)
+        for(int i=INT_MIN; i<0; i++);
     else
-        for(int i=INT_MIN/15; i<0; i++)
-        {}
+        for(int i=INT_MIN/15; i<0; i++);
     system("clear");
 }
 

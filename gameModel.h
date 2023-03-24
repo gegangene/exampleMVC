@@ -12,11 +12,14 @@ class gameModel
         gameModel();
         void increasePoints(int);
         void increaseLvl();
-        int getPoints();
+        void resetClicks();
+        long getPoints();
         int getLvl();
+        int remainingClicks();
     private:
         long points;
         int lvl;
+        int clicks;
 
 };
 
