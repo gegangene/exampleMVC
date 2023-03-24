@@ -3,6 +3,7 @@
 //
 
 #include "gameController.h"
+#include <conio.h>
 
 gameController::gameController(gameModel &model, gameView &view): model(model), view(view)
 {
@@ -12,10 +13,9 @@ void gameController::launch()
 {
     this->view.update();
     int input;
-    system("/bin/stty raw");
     do
     {
-        input=getchar();
+        input=_getch();
         if(input==32)
         {
             this->model.increasePoints(1*model.getLvl());

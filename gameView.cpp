@@ -34,13 +34,11 @@ std::string gameView::progressBar()
 
 void gameView::update()
 {
-    system("clear");
-    system("/bin/stty -raw");
+    system("cls");
     std::cout<<"Kliker konsolowy wersja wczesna alpha\n\taby zdobywac punkty, wciskaj spacje.\n\taby zakonczyc, wcisnij ESC"<<"\n";
     std::cout<<"\n\nObecny poziom: "<<model.getLvl();
     std::cout<<"\nDo kolejnego poziomu zostalo: "<<model.remainingClicks()<<" klikniec.\n"<<progressBar()<<"\n\n";
     pointsShow();
-    system("/bin/stty raw");
 }
 
 int randNr(int a)
@@ -84,8 +82,7 @@ std::string papajRandTxt(int a=randNr(11))
 
 void gameView::nextLvl()
 {
-    system("clear");
-    system("/bin/stty -raw");
+    system("cls");
     std::cout<<papajRandTxt()<<"\n";
     std::cout<<"\t~Najwiekszy z Polakow\n\n\n";
     std::cout<<"                 o\n";
@@ -106,7 +103,6 @@ void gameView::nextLvl()
     std::cout<<" 0.................\\___/...............0\n";
     std::cout<<" 0.....................................0\n\n";
     pointsShow();
-    system("/bin/stty raw");
 }
 
 void waitAndCls(bool forLong)
@@ -115,7 +111,7 @@ void waitAndCls(bool forLong)
         for(int i=INT_MIN; i<0; i++);
     else
         for(int i=INT_MIN/15; i<0; i++);
-    system("clear");
+    system("cls");
 }
 
 void wystrzal()
@@ -185,7 +181,6 @@ void wystrzal()
 
 void gameView::ending()
 {
-    system("/bin/stty -raw");
     wystrzal();
     std::cout<<std::endl<<papajRandTxt(20)<<"\n\nZdobyles: "<<model.getPoints()<<" punktow."<<"\n\n\n\n\nPS: przegrales w gre";
 }
