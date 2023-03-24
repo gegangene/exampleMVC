@@ -5,6 +5,7 @@
 #ifndef EXAMPLEMVC_GAMECONTROLLER_H
 #define EXAMPLEMVC_GAMECONTROLLER_H
 
+#include <conio.h>
 #include "gameModel.h"
 #include "gameView.h"
 

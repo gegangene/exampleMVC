@@ -3,7 +3,6 @@
 //
 
 #include "gameController.h"
-#include <conio.h>
 
 gameController::gameController(gameModel &model, gameView &view): model(model), view(view)
 {

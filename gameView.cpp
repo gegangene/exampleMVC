@@ -4,7 +4,6 @@
 
 
 #include "gameView.h"
-#include <climits>
 
 gameView::gameView(gameModel& model):model(model)
 {

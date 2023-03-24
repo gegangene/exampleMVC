@@ -8,6 +8,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <climits>
 #include "gameModel.h"
 
 class gameView
