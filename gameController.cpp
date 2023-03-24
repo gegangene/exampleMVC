@@ -12,15 +12,19 @@ void gameController::launch()
 {
     this->view.update();
     char input;
-    //system("stty raw");
+    system("/bin/stty raw");
     do
     {
-        input=getchar_unlocked();
-        if(input=='\n')
+        input=getchar();
+        if(input==' ')
         {
             this->model.increasePoints(1);
-            this->view.update();
+            if(this->model.getPoints()%100==0)
+                this->view.papaj();
+            else
+                this->view.update();
         }
     }
-    while(input=='\n');
+    while(input!=27);
+    view.ending();
 }

@@ -4,9 +4,8 @@
 
 #include "gameModel.h"
 
-gameModel::gameModel()
+gameModel::gameModel():points(0)
 {
-    this->points=0;
 }
 
 void gameModel::increasePoints(int a)

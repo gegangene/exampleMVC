@@ -13,7 +13,8 @@ class gameModel
         void increasePoints(int);
         int getPoints();
     private:
-        int points;
+        long points;
+
 };
 
 

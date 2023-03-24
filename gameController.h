@@ -12,7 +12,7 @@
 class gameController
 {
     public:
-    gameController(gameModel&, gameView&);
+    explicit gameController(gameModel&, gameView&);
     void launch();
 
     private:

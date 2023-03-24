@@ -6,7 +6,8 @@
 #define EXAMPLEMVC_GAMEVIEW_H
 
 #include <iostream>
-#include <stdlib.h>
+#include <cstdlib>
+#include <ctime>
 #include "gameModel.h"
 
 class gameView
@@ -14,8 +15,11 @@ class gameView
     public:
         explicit gameView(gameModel&);
         void update();
+        void papaj();
+        void ending();
     private:
         gameModel& model;
+        void pointsShow();
 };
 
 

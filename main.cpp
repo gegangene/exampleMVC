@@ -9,5 +9,6 @@ int main()
     gameView view(model);
     gameController controller(model, view);
     controller.launch();
+    //view.papaj();
     return 0;
 }
