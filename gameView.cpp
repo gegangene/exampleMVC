@@ -4,7 +4,6 @@
 
 
 #include "gameView.h"
-#include <climits>
 
 gameView::gameView(gameModel& model):model(model)
 {
@@ -46,7 +45,7 @@ void gameView::update()
 int randNr(int a)
 {
     srand(time(nullptr));
-    return std::rand()%a;
+    return rand()%a;
 }
 
 std::string papajRandTxt(int a=randNr(11))
