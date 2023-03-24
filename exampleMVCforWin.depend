@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1679693404 source:c:\users\ggn\documents\cpp\examplemvcforwin\gamecontroller.cpp
+	"gameController.h"
+
+1679695015 c:\users\ggn\documents\cpp\examplemvcforwin\gamecontroller.h
+	<conio.h>
+	"gameModel.h"
+	"gameView.h"
+
+1679693404 c:\users\ggn\documents\cpp\examplemvcforwin\gamemodel.h
+
+1679694965 c:\users\ggn\documents\cpp\examplemvcforwin\gameview.h
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<climits>
+	"gameModel.h"
+
+1679693404 source:c:\users\ggn\documents\cpp\examplemvcforwin\gamemodel.cpp
+	"gameModel.h"
+
+1679693404 source:c:\users\ggn\documents\cpp\examplemvcforwin\gameview.cpp
+	"gameView.h"
+	<climits>
+
+1679693404 source:c:\users\ggn\documents\cpp\examplemvcforwin\main.cpp
+	"gameController.h"
+
